@@ -1,0 +1,64 @@
+﻿<Page
+    x:Class="ATB_Market.DiscountsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ATB_Market"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style TargetType="Border" x:Key="BorderStyle">
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Height" Value="70"/>
+        </Style>
+        <Style TargetType="Grid" x:Key="GridStyle">
+            <Setter Property="Opacity" Value="0.7"/>
+            <Setter Property="Background" Value="#5794d4"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="TextBlockStyle">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+    </Page.Resources>
+
+
+    <Grid Margin="7" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ProgressRing x:ConnectionId='1' VerticalAlignment="Bottom" Margin="0,0,0,-25" x:Name="MyRing" Height="50" Width="50" Foreground="#3e78af" IsActive="False"/>
+        <Grid x:ConnectionId='2' Margin="3"                                                                                                >
+            <Image x:ConnectionId='5' x:Name="ImageDiscount7days" Stretch="UniformToFill"/>
+            <Border Style="{StaticResource BorderStyle}">
+                <Grid>
+                    <Grid Style="{StaticResource GridStyle}"/>
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource TextBlockStyle}"
+                                   Text="Акція: 7 днів" FontSize="25" Margin="10"/>
+                        <TextBlock Style="{StaticResource TextBlockStyle}"
+                               Text="Товари для дому, сім'ї та відпочинку"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid x:ConnectionId='3' Grid.Row="1" Margin="3"                                                                                              >
+            <Image x:ConnectionId='4' x:Name="ImageDiscountEconomy" Stretch="UniformToFill"/>
+            <Border Style="{StaticResource BorderStyle}">
+                <Grid>
+                    <Grid Style="{StaticResource GridStyle}"/>
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource TextBlockStyle}" 
+                                   Text="Акція: Економія" FontSize="25" Margin="10"/>
+                        <TextBlock Style="{StaticResource TextBlockStyle}" 
+                                   Text="Продуктові товари за низькими цінами"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>
+

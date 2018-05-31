@@ -1,0 +1,202 @@
+﻿<Page
+    x:Class="ATB_Market._7DaysDiscountCollectionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ATB_Market"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:ATB_Market.Models" 
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style TargetType="TextBlock" x:Key="HeaderItemStyle">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="Foreground" Value="#5794d4"/>
+            <Setter Property="FontSize" Value="19"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="TextBlockStyle">
+            <Setter Property="FontSize"  Value="21"/>
+            <Setter Property="FontWeight" Value="ExtraLight"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+    </Page.Resources>
+    <Grid Margin="7" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot TabIndex="2" x:Name="Pivot" SelectionChanged="Pivot_SelectionChanged">
+            <PivotItem>
+                <PivotItem.Header>
+                    <TextBlock Style="{StaticResource HeaderItemStyle}" Text="Для Кухні"/>
+                </PivotItem.Header>
+                <Grid Margin="-13,0" x:Name="mainGrid1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <ListView ItemsSource="{x:Bind collection1}" x:Name="MylistView1">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="data:Discount">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Image x:Name="DiscountImage" Source="{x:Bind Image}"/>
+                                    <Grid Grid.Row="1" Margin="0,5,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock FontWeight="ExtraLight" Margin="10" FontSize="15" FontFamily="Arial" x:Name="DescrTextBlock" TextWrapping="Wrap" Text="{x:Bind Description}"/>
+                                        <Border Grid.Column="1" CornerRadius="5" Background="#F81E1E" Height="40" VerticalAlignment="Center">
+                                            <TextBlock  Style="{StaticResource TextBlockStyle}" x:Name="CurrPriceTextBlock"   Text="{x:Bind CurrentPrice}"/>
+                                        </Border>
+                                    </Grid>
+                                    <StackPanel Grid.Row="2" Height="3" Background="LightGray" HorizontalAlignment="Stretch" Margin="-20,4"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+
+            </PivotItem>
+            <PivotItem>
+                <PivotItem.Header>
+                    <TextBlock Style="{StaticResource HeaderItemStyle}" Text="Одяг"/>
+                </PivotItem.Header>
+                <Grid Margin="-13,0" x:Name="mainGrid2" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <ListView ItemsSource="{x:Bind collection2}" x:Name="MylistView2">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="data:Discount">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Image x:Name="DiscountImage" Source="{x:Bind Image}"/>
+                                    <Grid Grid.Row="1" Margin="0,5,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock FontWeight="ExtraLight" Margin="10" FontSize="15" FontFamily="Arial" x:Name="DescrTextBlock" TextWrapping="Wrap" Text="{x:Bind Description}"/>
+                                        <Border Grid.Column="1" CornerRadius="5" Background="#F81E1E" Height="40" VerticalAlignment="Center">
+                                            <TextBlock  Style="{StaticResource TextBlockStyle}" x:Name="CurrPriceTextBlock"   Text="{x:Bind CurrentPrice}"/>
+                                        </Border>
+                                    </Grid>
+                                    <StackPanel Grid.Row="2" Height="3" Background="LightGray" HorizontalAlignment="Stretch" Margin="-20,4"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+
+            </PivotItem>
+            <PivotItem>
+                <PivotItem.Header>
+                    <TextBlock Style="{StaticResource HeaderItemStyle}" Text="Дитячі товари"/>
+                </PivotItem.Header>
+                <Grid Margin="-13,0" x:Name="mainGrid3" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <ListView ItemsSource="{x:Bind collection3}" x:Name="MylistView3">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="data:Discount">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Image x:Name="DiscountImage" Source="{x:Bind Image}"/>
+                                    <Grid Grid.Row="1" Margin="0,5,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock FontWeight="ExtraLight" Margin="10" FontSize="15" FontFamily="Arial" x:Name="DescrTextBlock" TextWrapping="Wrap" Text="{x:Bind Description}"/>
+                                        <Border Grid.Column="1" CornerRadius="5" Background="#F81E1E" Height="40" VerticalAlignment="Center">
+                                            <TextBlock  Style="{StaticResource TextBlockStyle}" x:Name="CurrPriceTextBlock"   Text="{x:Bind CurrentPrice}"/>
+                                        </Border>
+                                    </Grid>
+                                    <StackPanel Grid.Row="2" Height="3" Background="LightGray" HorizontalAlignment="Stretch" Margin="-20,4"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+
+            </PivotItem>
+            <PivotItem>
+                <PivotItem.Header>
+                    <TextBlock Style="{StaticResource HeaderItemStyle}" Text="Господарчі товари"/>
+                </PivotItem.Header>
+                <Grid Margin="-13,0" x:Name="mainGrid4" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <ListView ItemsSource="{x:Bind collection4}" x:Name="MylistView4">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="data:Discount">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Image x:Name="DiscountImage" Source="{x:Bind Image}"/>
+                                    <Grid Grid.Row="1" Margin="0,5,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock FontWeight="ExtraLight" Margin="10" FontSize="15" FontFamily="Arial" x:Name="DescrTextBlock" TextWrapping="Wrap" Text="{x:Bind Description}"/>
+                                        <Border Grid.Column="1" CornerRadius="5" Background="#F81E1E" Height="40" VerticalAlignment="Center">
+                                            <TextBlock  Style="{StaticResource TextBlockStyle}" x:Name="CurrPriceTextBlock"   Text="{x:Bind CurrentPrice}"/>
+                                        </Border>
+                                    </Grid>
+                                    <StackPanel Grid.Row="2" Height="3" Background="LightGray" HorizontalAlignment="Stretch" Margin="-20,4"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+
+            </PivotItem>
+            <!--<PivotItem>
+                <PivotItem.Header>
+                    <TextBlock Style="{StaticResource HeaderItemStyle}" Text="Новорічні товари"/>
+                </PivotItem.Header>
+                <Grid Margin="-13,0" x:Name="mainGrid7" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <ListView ItemsSource="{x:Bind collection7}" x:Name="MylistView7">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="data:Discount">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Image x:Name="DiscountImage" Source="{x:Bind Image}"/>
+                                    <Grid Grid.Row="1" Margin="0,5,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock FontWeight="ExtraLight" Margin="10" FontSize="15" FontFamily="Arial" x:Name="DescrTextBlock" TextWrapping="Wrap" Text="{x:Bind Description}"/>
+                                        <Border Grid.Column="1" CornerRadius="5" Background="#F81E1E" Height="40" VerticalAlignment="Center">
+                                            <TextBlock  Style="{StaticResource TextBlockStyle}" x:Name="CurrPriceTextBlock"   Text="{x:Bind CurrentPrice}"/>
+                                        </Border>
+                                    </Grid>
+                                    <StackPanel Grid.Row="2" Height="3" Background="LightGray" HorizontalAlignment="Stretch" Margin="-20,4"/>
+                            
+                                 </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+
+            </PivotItem>-->
+        </Pivot>
+        <ProgressRing TabIndex="1" x:Name="MyProgressRing1" Height="50" Width="50" Foreground="#3e78af" IsActive="False"/>
+
+    </Grid>
+</Page>
